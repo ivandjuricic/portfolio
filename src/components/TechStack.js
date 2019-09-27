@@ -17,6 +17,7 @@ const TechStack = () => {
       }
     }
   `);
+
   const {
     prismic: {
       allTech_stacks: { edges },

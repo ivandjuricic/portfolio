@@ -14,7 +14,7 @@ const TechTag = props => {
         minWidth: '40px',
       }}
     >
-      <small style={{ color: 'white', fontSize: '1rem' }}>{name}</small>
+      <small style={{ color: '#FFF' }}>{name}</small>
     </div>
   );
 };

@@ -11,6 +11,10 @@ export default function PageFooter() {
         <li>
           Demo Images: <a href="http://unsplash.com/">Unsplash</a>
         </li>
+        <li>
+          Header Image:{' '}
+          <a href="https://unsplash.com/photos/TkEPQPWr2sY">Mark Solarski</a>
+        </li>
       </ul>
     </div>
   );

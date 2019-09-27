@@ -41,12 +41,6 @@ const Projects = () => {
         <header>
           <h2>Main Projects Overview</h2>
         </header>
-        <p>
-          Life will feel it is always a great need for eu valley, the valley CNN
-          ridiculous smile at any time chat mainstream clinical homes. Mauris
-          floor was very warm and we need it. One customer now nibh Bureau dark
-          pools behavior.
-        </p>
         <div className="projects-container">
           {edges.map(edge => {
             const name = edge.node.name[0].text;

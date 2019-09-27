@@ -5,7 +5,9 @@ const Project = props => {
   const { name, description, url, img, technologies, company, role } = props;
   return (
     <div className="project-content">
-      <h3>{name}</h3>
+      <h3>
+        <b>{name}</b>
+      </h3>
       <a
         style={{
           fontSize: '0.7em',
@@ -16,8 +18,12 @@ const Project = props => {
         className="icon fa-1 fa-external-link"
         href={url}
       />
-      <h4>{role}</h4>
-      <p>{company}</p>
+      <h4>
+        <p>
+          {company}&nbsp;
+          <i>({role})</i>
+        </p>
+      </h4>
       <div className="project-image" style={{ backgroundImage: `url(${img}` }}>
         <span></span>
       </div>
