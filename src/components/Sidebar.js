@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Footer from './Footer';
-import Header from './Header';
+import SideBarHeader from './SideBarHeader';
 import Nav from './Nav';
 import TopNav from './TopNav';
-import config from '../../../config';
-import pic from '../../assets/images/profile.png';
+import config from '../../config';
+import pic from '../assets/images/profile.png';
 
 function SideBar({ sections = [] }) {
   const [headerOpen, toggleHeader] = useState(false);
@@ -16,7 +16,7 @@ function SideBar({ sections = [] }) {
       />
       <div id="header">
         <div className="top">
-          <Header
+          <SideBarHeader
             avatar={pic}
             title={config.authorName}
             heading={config.heading}

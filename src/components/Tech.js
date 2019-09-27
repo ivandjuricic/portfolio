@@ -12,10 +12,10 @@ const Tech = props => {
         size={180}
         color="#2196f3"
         borderWidth={10}
-        showPercentage={true}
         valueText={`${parseFloat(competency)}%`}
-        valueTextColor="#2196f3"
+        valueFontSize={41}
         labelText="competence"
+        valueTextColor="#2196f3"
       />
     </div>
   );

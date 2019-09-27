@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-export default function Footer({ title, heading, avatar }) {
+export default function SideBarHeader({ title, heading, avatar }) {
   const data = useStaticQuery(graphql`
     {
       prismic {

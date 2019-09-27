@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import PageFooter from '../components/PageFooter';
-import SideBar from '../components/SideBar/Sidebar';
+import SideBar from '../components/SideBar';
 import Projects from '../components/Projects';
 import Header from '../components/Header';
 import TechStack from '../components/TechStack';
