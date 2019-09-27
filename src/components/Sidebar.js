@@ -8,11 +8,14 @@ import pic from '../assets/images/profile.png';
 
 function SideBar({ sections = [] }) {
   const [headerOpen, toggleHeader] = useState(false);
-  return (
-    <div className={`${headerOpen ? 'header-visible' : ' '}`}>
+  const children = (
+    <React.Fragment>
       <TopNav
         title={config.authorName}
-        onMenuClick={() => toggleHeader(!headerOpen)}
+        onMenuClick={() => {
+          console.log('header', headerOpen);
+          toggleHeader(!headerOpen);
+        }}
       />
       <div id="header">
         <div className="top">
@@ -25,8 +28,13 @@ function SideBar({ sections = [] }) {
         </div>
         <Footer socialLinks={config.socialLinks} />
       </div>
-    </div>
+    </React.Fragment>
   );
+
+  if (headerOpen) {
+    return <div className="header-visible">{children}</div>;
+  }
+  return <div className=" ">{children}</div>;
 }
 
 export default SideBar;

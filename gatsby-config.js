@@ -6,9 +6,8 @@ module.exports = {
     title: config.siteTitle,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
+    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {

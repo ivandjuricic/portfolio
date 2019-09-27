@@ -8,6 +8,8 @@ import Header from '../components/Header';
 import TechStack from '../components/TechStack';
 import Biography from '../components/Biography';
 
+import '../assets/sass/main.scss';
+
 const sections = [
   { id: 'top', name: 'Intro', icon: 'fa-home' },
   { id: 'tech-stack', name: 'Tech-Stack', icon: 'fa-list' },
