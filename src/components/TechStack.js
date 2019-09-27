@@ -60,33 +60,3 @@ export const query = graphql`
 `;
 
 export default TechStack;
-
-// const TechStack = () => {
-//   return (
-//     <section id="tech-stack" className="two">
-//       <div className="container">
-//         <header>
-//           <h2>Technology Stack</h2>
-//         </header>
-//         <p>Here are some technologies I've been working with in the past</p>
-
-//         <div className="row">
-//           <div className="col-4 col-12-mobile">
-//             <h1>Somethings</h1>
-//             <h1>Something else</h1>
-//           </div>
-//           <div className="col-4 col-12-mobile">
-//             <h1>Somethings</h1>
-//             <h1>Something else</h1>
-//           </div>
-//           <div className="col-4 col-12-mobile">
-//             <h1>Somethings</h1>
-//             <h1>Something else</h1>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default TechStack;

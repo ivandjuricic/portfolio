@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gauge } from 'framework7-react';
+import Gauge from './Gauge';
 
 const Tech = props => {
   const { competency, technology } = props;
@@ -8,12 +8,12 @@ const Tech = props => {
       <h1>{technology}</h1>
       <Gauge
         type="circle"
-        value={parseFloat(competency) / 100}
+        progress={parseFloat(competency)}
         size={180}
-        borderColor="#2196f3"
+        color="#2196f3"
         borderWidth={10}
+        showPercentage={true}
         valueText={`${parseFloat(competency)}%`}
-        valueFontSize={41}
         valueTextColor="#2196f3"
         labelText="competence"
       />
