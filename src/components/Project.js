@@ -31,7 +31,7 @@ const Project = props => {
       <p>{description}</p>
       <div className="project-technologies-container">
         {technologies.map(tech => (
-          <TechTag name={tech.technology[0].text} />
+          <TechTag name={tech.technology.text} />
         ))}
       </div>
     </div>

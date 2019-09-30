@@ -6,60 +6,88 @@ import Education from './Education';
 const Biography = () => {
   const data = useStaticQuery(graphql`
     {
-      prismic {
-        allBios {
-          edges {
-            node {
-              jobs {
-                company1
-                duration
-                description
-                role
-              }
-              biography
-              eductation {
-                degree
-                department
-                institution
-                year_finished
-              }
+      prismicBio {
+        data {
+          biography {
+            text
+          }
+          company {
+            text
+          }
+          jobs {
+            company1 {
+              text
+            }
+            description {
+              text
+            }
+            role {
+              text
+            }
+            duration {
+              text
+            }
+          }
+          eductation {
+            degree {
+              text
+            }
+            department {
+              text
+            }
+            institution {
+              text
+            }
+            year_finished {
+              text
             }
           }
         }
       }
     }
   `);
-  const node = data.prismic.allBios.edges[0].node;
-  const { biography, jobs, eductation } = node;
-  const education = eductation;
+  const {
+    prismicBio: {
+      data: {
+        biography,
+        company,
+        eductation,
+        department,
+        institution,
+        year_finished,
+        jobs,
+      },
+    },
+  } = data;
   return (
     <section id="biography" className="four">
       <div className="container">
         <h1>Biography</h1>
-        {biography.map(paragraph => (
-          <p>{paragraph.text}</p>
-        ))}
+        <p>{biography.text}</p>
       </div>
       <div className="job-education-container">
         <div className="education-container">
-          {education.map(ed => (
+          {eductation.map(ed => (
             <Education
-              degree={ed.degree[0].text}
-              institution={ed.institution[0].text}
-              departments={ed.department[0].text}
-              year={ed.year_finished[0].text}
+              degree={ed.degree.text}
+              institution={ed.institution.text}
+              departments={ed.department.text}
+              year={ed.year_finished.text}
             />
           ))}
         </div>
         <div className="jobs-container">
-          {jobs.map(job => (
-            <Job
-              company={job.company1[0].text}
-              role={job.role[0].text}
-              description={job.description}
-              duration={job.duration[0].text}
-            />
-          ))}
+          {jobs.map(job => {
+            console.log(job);
+            return (
+              <Job
+                company={job.company1.text}
+                role={job.role.text}
+                description={job.description}
+                duration={job.duration.text}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

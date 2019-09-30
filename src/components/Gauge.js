@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-const DEFAULT_COLOR = '#2196f3';
+import classNames from 'classnames';
+const DEFAULT_COLOR = '#040404';
 
 class RadialChart extends Component {
+  state = {};
+  componentDidMount() {
+    // For initial animation
+    setTimeout(() => {
+      this.setState({ setStrokeLength: true });
+    });
+  }
   render() {
+    const { setStrokeLength } = this.state;
     const {
+      className,
       radius,
       progress,
       strokeWidth,
@@ -16,11 +25,17 @@ class RadialChart extends Component {
 
     const circleRadius = Math.min(radius, 85);
     const circumference = 2 * 3.14 * circleRadius;
-    const strokeLength = (circumference / 100) * progress;
+    const strokeLength = setStrokeLength ? (circumference / 100) * progress : 0;
     return (
-      <div className={'radial-chart'}>
+      <div
+        className={classNames('radial-chart', className, {
+          'no-progress': strokeLength === 0,
+        })}
+      >
         <div className="radial-chart-inside-text">
-          <h1 style={{ textColor: color, margin: '0px 0px' }}>{valueText}</h1>
+          <h1 style={{ textColor: DEFAULT_COLOR, margin: '0px 0px' }}>
+            {valueText}
+          </h1>
           <p>confidency</p>
         </div>
         <svg viewBox="0 0 180 180" width={dimension} height={dimension}>

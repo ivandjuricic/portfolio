@@ -7,12 +7,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
     `gatsby-plugin-offline`,
     {
-      resolve: 'gatsby-source-prismic-graphql',
+      resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: 'IvandjPortfolio',
+        repositoryName: `IvandjPortfolio`,
         accessToken: process.env.PRIMIC_ACCESS_TOKEN,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
   ],

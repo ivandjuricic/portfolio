@@ -5,23 +5,24 @@ import Tech from './Tech';
 const TechStack = () => {
   const data = useStaticQuery(graphql`
     {
-      prismic {
-        allTech_stacks {
-          edges {
-            node {
-              compentecy
-              technology
+      allPrismicTechStack {
+        edges {
+          node {
+            data {
+              compentecy {
+                text
+              }
+              technology {
+                text
+              }
             }
           }
         }
       }
     }
   `);
-
   const {
-    prismic: {
-      allTech_stacks: { edges },
-    },
+    allPrismicTechStack: { edges },
   } = data;
   return (
     <section id="tech-stack" className="two">
@@ -33,8 +34,8 @@ const TechStack = () => {
           {edges.map(edge => {
             return (
               <Tech
-                technology={edge.node.technology[0].text}
-                competency={edge.node.compentecy[0].text}
+                technology={edge.node.data.technology.text}
+                competency={edge.node.data.compentecy.text}
               />
             );
           })}
@@ -43,20 +44,5 @@ const TechStack = () => {
     </section>
   );
 };
-
-export const query = graphql`
-  {
-    prismic {
-      allTech_stacks {
-        edges {
-          node {
-            compentecy
-            technology
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default TechStack;

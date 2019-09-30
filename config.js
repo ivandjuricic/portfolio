@@ -2,8 +2,6 @@ module.exports = {
   siteTitle: 'Portfolio',
   authorName: 'Ivan Djuricic',
   heading: 'Software Engineer',
-  pathPrefix: '/',
-  // social
   socialLinks: [
     {
       icon: 'fa-github',

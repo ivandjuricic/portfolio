@@ -5,23 +5,31 @@ import Project from './Project';
 const Projects = () => {
   const data = useStaticQuery(graphql`
     {
-      prismic {
-        allProjectss {
-          edges {
-            node {
-              name
-              company
-              role
-              started
-              ended
-              description
-              technologies {
-                technology
+      allPrismicProjects {
+        edges {
+          node {
+            data {
+              company {
+                text
               }
-              snapshot
+              description {
+                text
+              }
+              name {
+                text
+              }
+              role {
+                text
+              }
               site {
-                ... on PRISMIC__ExternalLink {
-                  url
+                url
+              }
+              snapshot {
+                url
+              }
+              technologies {
+                technology {
+                  text
                 }
               }
             }
@@ -30,10 +38,9 @@ const Projects = () => {
       }
     }
   `);
+  debugger;
   const {
-    prismic: {
-      allProjectss: { edges },
-    },
+    allPrismicProjects: { edges },
   } = data;
   return (
     <section id="projects" className="two">
@@ -43,15 +50,15 @@ const Projects = () => {
         </header>
         <div className="projects-container">
           {edges.map(edge => {
-            const name = edge.node.name[0].text;
-            const description = edge.node.description[0].text;
-            const site = edge.node.site ? edge.node.site.url : '#';
-            const technologies = edge.node.technologies;
-            const img = edge.node.snapshot.url;
-            const company = edge.node.company[0].text;
-            const role = edge.node.role[0].text;
-            const started = edge.node.started;
-            const ended = edge.node.ended;
+            const name = edge.node.data.name.text;
+            const description = edge.node.data.description.text;
+            const site = edge.node.data.site ? edge.node.data.site.url : '#';
+            const technologies = edge.node.data.technologies;
+            const img = edge.node.data.snapshot.url;
+            const company = edge.node.data.company.text;
+            const role = edge.node.data.role.text;
+            const started = edge.node.data.started;
+            const ended = edge.node.data.ended;
             return (
               <Project
                 name={name}

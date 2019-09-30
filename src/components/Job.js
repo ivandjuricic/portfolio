@@ -7,9 +7,7 @@ const Job = props => {
       <h2>{company}</h2>
       <h4>{role}</h4>
       <p>{duration}</p>
-      {description.map(p => (
-        <small>{p.text}. </small>
-      ))}
+      <small>{description.text}</small>
     </div>
   );
 };
