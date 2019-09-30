@@ -4,7 +4,7 @@ const SidebarHeader = ({ title, heading, avatar }) => {
   return (
     <div id="logo" className="sidebar-header-container">
       <div className="image avatar48">
-        <img src={avatar} alt="profile-image" />
+        <img src={avatar} alt="profile" />
       </div>
       <h1 id="title">{title}</h1>
       <p>{heading}</p>

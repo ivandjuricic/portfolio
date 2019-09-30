@@ -48,25 +48,21 @@ const Biography = () => {
   `);
   const {
     prismicBio: {
-      data: {
-        biography,
-        company,
-        eductation,
-        department,
-        institution,
-        year_finished,
-        jobs,
-      },
+      data: { biography, eductation, jobs },
     },
   } = data;
   return (
-    <section id="biography" className="four">
+    <section id="biography">
       <div className="container">
-        <h1>Biography</h1>
+        <header>
+          <h2>Biography</h2>
+        </header>
         <p>{biography.text}</p>
       </div>
       <div className="job-education-container">
         <div className="education-container">
+          <h2>Education</h2>
+          <hr />
           {eductation.map(ed => (
             <Education
               degree={ed.degree.text}
@@ -77,8 +73,9 @@ const Biography = () => {
           ))}
         </div>
         <div className="jobs-container">
+          <h2>Work experience</h2>
+          <hr />
           {jobs.map(job => {
-            console.log(job);
             return (
               <Job
                 company={job.company1.text}
