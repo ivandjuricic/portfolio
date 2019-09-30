@@ -857,9 +857,9 @@ button,
 
   .image {
     margin: auto;
-    height: 160px;
-    width: 160px;
-    margin-bottom: 20px;
+    height: 140px;
+    width: 140px;
+    margin-bottom: 10px;
     @include breakpoint('narrow') {
       width: 120px;
       height: 120px;
@@ -1481,5 +1481,5 @@ button,
 
 .radial-chart-inside-text p {
   margin: 0px 0px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }

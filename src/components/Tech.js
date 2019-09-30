@@ -9,7 +9,7 @@ const Tech = props => {
       <Gauge
         type="circle"
         progress={parseFloat(competency)}
-        size={180}
+        size={150}
         color="#2196f3"
         borderWidth={10}
         valueText={`${parseFloat(competency)}%`}

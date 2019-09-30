@@ -18,7 +18,7 @@ class RadialChart extends Component {
       radius,
       progress,
       strokeWidth,
-      dimension,
+      size,
       valueText,
       color,
     } = this.props;
@@ -38,7 +38,7 @@ class RadialChart extends Component {
           </h1>
           <p>confidency</p>
         </div>
-        <svg viewBox="0 0 180 180" width={dimension} height={dimension}>
+        <svg viewBox="0 0 180 180" width={size} height={size}>
           <circle
             className="radial-chart-total"
             stroke={color}
@@ -69,7 +69,7 @@ RadialChart.defaultProps = {
   radius: 80,
   progress: 100,
   strokeWidth: 10,
-  dimension: 180,
+  size: 180,
   color: DEFAULT_COLOR,
 };
 RadialChart.propTypes = {
@@ -78,6 +78,6 @@ RadialChart.propTypes = {
   strokeWidth: PropTypes.number,
   color: PropTypes.string,
   progress: PropTypes.number,
-  dimension: PropTypes.number,
+  size: PropTypes.number,
 };
 export default RadialChart;
