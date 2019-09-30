@@ -306,6 +306,11 @@
 		}
 	}
 
+	.sidebar-header-container {
+		display: flex;
+		flex-direction: column;
+	}
+
 /* Row */
 
 	.row {
@@ -686,32 +691,38 @@
 	}
 
 	#logo {
-		position: relative;
-		margin: 1.75em 1.5em 1.5em 1.5em;
-		min-height: 48px;
-		cursor: default;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 25px 0;
 
 		h1 {
-			position: relative;
 			color: #fff;
 			font-weight: 600;
 			font-size: 1em;
 			line-height: 1em;
+			text-align: center;
 		}
 
 		p {
-			position: relative;
-			display: block;
 			font-size: 0.6em;
 			color: rgba(255, 255, 255, 0.5);
 			line-height: 1.25em;
 			margin: 0.5em 0 0 0;
+			text-align: center;
 		}
 
 		.image {
-			position: absolute;
-			left: 0;
-			top: 0;
+			margin: auto;
+			height: 160px;
+			width: 160px;
+			margin-bottom: 20px;
+
+			img {
+				border-radius: 50%;
+				height: 100%;
+				width: 100%;
+			}
 		}
 	}
 

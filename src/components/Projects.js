@@ -38,7 +38,6 @@ const Projects = () => {
       }
     }
   `);
-  debugger;
   const {
     allPrismicProjects: { edges },
   } = data;
