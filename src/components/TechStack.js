@@ -15,6 +15,7 @@ const TechStack = () => {
               technology {
                 text
               }
+              primary
             }
           }
         }
@@ -31,14 +32,37 @@ const TechStack = () => {
           <h2>Technology Stack</h2>
         </header>
         <div className="technology-stack-container">
-          {edges.map(edge => {
-            return (
-              <Tech
-                technology={edge.node.data.technology.text}
-                competency={edge.node.data.compentecy.text}
-              />
-            );
-          })}
+          {edges
+            .filter(e => {
+              console.log(e);
+              return e.node.data.primary === 'true';
+            })
+            .map(edge => {
+              return (
+                <Tech
+                  primary={true}
+                  technology={edge.node.data.technology.text}
+                  competency={edge.node.data.compentecy.text}
+                />
+              );
+            })}
+        </div>
+        <hr />
+        <div className="technology-stack-container">
+          {edges
+            .filter(e => {
+              console.log(e);
+              return e.node.data.primary !== 'true';
+            })
+            .map(edge => {
+              return (
+                <Tech
+                  primary={false}
+                  technology={edge.node.data.technology.text}
+                  competency={edge.node.data.compentecy.text}
+                />
+              );
+            })}
         </div>
       </div>
     </section>

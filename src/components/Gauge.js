@@ -20,6 +20,8 @@ class RadialChart extends Component {
       strokeWidth,
       size,
       valueText,
+      valueFontSize,
+      secondaryFontSize,
       color,
     } = this.props;
 
@@ -33,10 +35,16 @@ class RadialChart extends Component {
         })}
       >
         <div className="radial-chart-inside-text">
-          <h1 style={{ textColor: DEFAULT_COLOR, margin: '0px 0px' }}>
+          <h1
+            style={{
+              textColor: DEFAULT_COLOR,
+              margin: '0px 0px',
+              fontSize: `${valueFontSize}px`,
+            }}
+          >
             {valueText}
           </h1>
-          <p>confidency</p>
+          <p style={{ fontSize: `${secondaryFontSize}px` }}>confidency</p>
         </div>
         <svg viewBox="0 0 180 180" width={size} height={size}>
           <circle
@@ -71,6 +79,8 @@ RadialChart.defaultProps = {
   strokeWidth: 10,
   size: 180,
   color: DEFAULT_COLOR,
+  valueFontSize: 30,
+  secondaryFontSize: 16,
 };
 RadialChart.propTypes = {
   className: PropTypes.string,
@@ -79,5 +89,8 @@ RadialChart.propTypes = {
   color: PropTypes.string,
   progress: PropTypes.number,
   size: PropTypes.number,
+  valueFontSize: PropTypes.number,
+  secondaryFontSize: PropTypes.number,
 };
+
 export default RadialChart;
