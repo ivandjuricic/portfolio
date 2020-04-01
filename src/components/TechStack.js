@@ -39,6 +39,7 @@ const TechStack = () => {
             .map(edge => {
               return (
                 <Tech
+                  key={edge.node.data.technology[0].text}
                   primary={true}
                   technology={edge.node.data.technology[0].text}
                   competency={edge.node.data.compentecy[0].text}
@@ -55,6 +56,7 @@ const TechStack = () => {
             .map(edge => {
               return (
                 <Tech
+                  key={edge.node.data.technology[0].text}
                   primary={false}
                   technology={edge.node.data.technology[0].text}
                   competency={edge.node.data.compentecy[0].text}

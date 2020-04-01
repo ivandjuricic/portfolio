@@ -73,6 +73,7 @@ const Biography = () => {
           <hr />
           {education.map(ed => (
             <Education
+              key={ed.degree.text}
               degree={ed.degree.text}
               institution={ed.institution.text}
               departments={ed.department.text}
@@ -86,6 +87,7 @@ const Biography = () => {
           {jobs.map(job => {
             return (
               <Job
+                key={job.company1.text}
                 company={job.company1.text}
                 role={job.role}
                 description={job.description.text}

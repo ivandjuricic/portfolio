@@ -20,7 +20,7 @@ export default function Nav({ sections = [], handleClick }) {
                   element={s.id}
                   onClick={() => handleClick(false)}
                 >
-                  <Link id="top-link">
+                  <Link to={`/#${s.id}`} id="top-link">
                     <span className={`icon ${s.icon}`}>{s.name}</span>
                   </Link>
                 </Scroll>

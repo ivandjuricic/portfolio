@@ -27,7 +27,9 @@ const Project = props => {
         }}
         className="icon fa-1 fa-external-link"
         href={url}
-      />
+      >
+        <i className="icon fa-1 fa-external-link" aria-hidden="true" />
+      </a>
       <h4>
         <p style={{ marginBottom: '15px' }}>
           {company}&nbsp;
@@ -45,7 +47,10 @@ const Project = props => {
       <p>{description}</p>
       <div className="project-technologies-container">
         {technologies.map(tech => (
-          <TechTag name={tech.technology.text} />
+          <TechTag
+            key={`${name}-${tech.technology[0].text}`}
+            name={tech.technology[0].text}
+          />
         ))}
       </div>
     </div>

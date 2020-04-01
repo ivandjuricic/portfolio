@@ -62,6 +62,7 @@ const Projects = () => {
             const ended = edge.node.data.ended;
             return (
               <Project
+                key={name}
                 name={name}
                 company={company}
                 role={role}
