@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
+import Seo from './Seo';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
@@ -39,15 +39,7 @@ class Layout extends Component {
         `}
         render={data => (
           <>
-            <Helmet
-              title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'Porfolio', content: 'Developer ortfolio site' },
-                { name: 'keywords', content: 'site, web, portfolio' },
-              ]}
-            >
-              <html lang="en" />
-            </Helmet>
+            <Seo />
             <div className={isPreloaded ? 'main-body is-preload' : 'main-body'}>
               {children}
             </div>

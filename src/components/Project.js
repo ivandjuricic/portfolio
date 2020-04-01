@@ -25,7 +25,6 @@ const Project = props => {
           display: 'inline',
           float: 'right',
         }}
-        className="icon fa-1 fa-external-link"
         href={url}
       >
         <i className="icon fa-1 fa-external-link" aria-hidden="true" />

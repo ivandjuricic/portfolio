@@ -3,12 +3,29 @@ const config = require('./config');
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
-    title: config.siteTitle,
+    title: 'Ivan Djuricic',
+    url: 'www.ivandjuricic.com',
+    defaultImage: 'src/images/profile.png',
+    description: 'Portfolio site',
+    image: 'src/assets/images/profile.png',
+    twitterUsername: '@darth_ivanche',
   },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Ivan Djuricic Portfolio',
+        short_name: 'ivandjuricic',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#663399',
+        display: 'minimal-ui',
+        icon: 'src/assets/images/laptop.png',
+      },
+    },
     {
       resolve: 'gatsby-source-prismic',
       options: {
