@@ -27,6 +27,8 @@ const Projects = () => {
               snapshot {
                 url
               }
+              started
+              ended
               technologies {
                 technology {
                   text
@@ -49,13 +51,13 @@ const Projects = () => {
         </header>
         <div className="projects-container">
           {edges.map(edge => {
-            const name = edge.node.data.name.text;
-            const description = edge.node.data.description.text;
+            const name = edge.node.data.name[0].text;
+            const description = edge.node.data.description[0].text;
             const site = edge.node.data.site ? edge.node.data.site.url : '#';
             const technologies = edge.node.data.technologies;
             const img = edge.node.data.snapshot.url;
-            const company = edge.node.data.company.text;
-            const role = edge.node.data.role.text;
+            const company = edge.node.data.company[0].text;
+            const role = edge.node.data.role[0].text;
             const started = edge.node.data.started;
             const ended = edge.node.data.ended;
             return (

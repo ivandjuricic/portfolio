@@ -10,11 +10,14 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-source-prismic`,
+      resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: `IvandjPortfolio`,
+        repositoryName: 'IvandjPortfolio',
         accessToken: process.env.PRIMIC_ACCESS_TOKEN,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        linkResolver: () => post => `/${post.uid}`,
+        schemas: {
+          bio: require('./src/schemas/bio.json'),
+        },
       },
     },
   ],

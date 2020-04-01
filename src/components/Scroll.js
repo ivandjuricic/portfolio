@@ -13,6 +13,7 @@ class Scroll extends React.Component {
     offset: PropTypes.number,
     timeout: PropTypes.number,
     children: PropTypes.node.isRequired,
+    onClick: PropTypes.any,
   };
   constructor() {
     super();
@@ -22,6 +23,7 @@ class Scroll extends React.Component {
     smoothscroll.polyfill();
   }
   handleClick(e) {
+    this.props.onClick();
     e.preventDefault();
     let elem = 0;
     let scroll = true;
@@ -39,7 +41,9 @@ class Scroll extends React.Component {
         default:
       }
     }
-    scroll ? this.scrollTo(elem, offset, timeout) : null;
+    if (scroll) {
+      this.scrollTo(elem, offset, timeout);
+    }
   }
   scrollTo(element, offSet = 0, timeout = null) {
     const elemPos = element

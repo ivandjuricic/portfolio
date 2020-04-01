@@ -12,10 +12,10 @@ const TechStack = () => {
               compentecy {
                 text
               }
+              primary
               technology {
                 text
               }
-              primary
             }
           }
         }
@@ -34,15 +34,14 @@ const TechStack = () => {
         <div className="technology-stack-container">
           {edges
             .filter(e => {
-              console.log(e);
               return e.node.data.primary === 'true';
             })
             .map(edge => {
               return (
                 <Tech
                   primary={true}
-                  technology={edge.node.data.technology.text}
-                  competency={edge.node.data.compentecy.text}
+                  technology={edge.node.data.technology[0].text}
+                  competency={edge.node.data.compentecy[0].text}
                 />
               );
             })}
@@ -51,15 +50,14 @@ const TechStack = () => {
         <div className="technology-stack-container">
           {edges
             .filter(e => {
-              console.log(e);
               return e.node.data.primary !== 'true';
             })
             .map(edge => {
               return (
                 <Tech
                   primary={false}
-                  technology={edge.node.data.technology.text}
-                  competency={edge.node.data.compentecy.text}
+                  technology={edge.node.data.technology[0].text}
+                  competency={edge.node.data.compentecy[0].text}
                 />
               );
             })}

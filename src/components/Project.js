@@ -2,7 +2,17 @@ import React from 'react';
 import TechTag from './TechTag';
 
 const Project = props => {
-  const { name, description, url, img, technologies, company, role } = props;
+  const {
+    name,
+    description,
+    url,
+    img,
+    technologies,
+    company,
+    role,
+    started,
+    ended,
+  } = props;
   return (
     <div className="project-content">
       <h3>
@@ -19,14 +29,18 @@ const Project = props => {
         href={url}
       />
       <h4>
-        <p>
+        <p style={{ marginBottom: '15px' }}>
           {company}&nbsp;
           <i>({role})</i>
         </p>
       </h4>
-      <div className="project-image" style={{ backgroundImage: `url(${img}` }}>
-        <span></span>
-      </div>
+      <p style={{ marginBottom: '15px' }}>
+        <i>{`(${started} - ${ended})`}</i>
+      </p>
+      <div
+        className="project-image"
+        style={{ backgroundImage: `url(${img}` }}
+      />
 
       <p>{description}</p>
       <div className="project-technologies-container">

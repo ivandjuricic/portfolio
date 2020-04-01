@@ -1,0 +1,76 @@
+{
+  "Main": {
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Name",
+        "placeholder": "Project Name"
+      }
+    },
+    "company": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "label": "Company"
+      }
+    },
+    "role": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "role"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "label": "Description",
+        "placeholder": "Project description"
+      }
+    },
+    "site": {
+      "type": "Link",
+      "config": {
+        "label": "Site"
+      }
+    },
+    "technologies": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "technology": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label": "Technology",
+              "placeholder": "Technology used"
+            }
+          }
+        },
+        "label": "Technologies"
+      }
+    },
+    "started": {
+      "type": "Date",
+      "config": {
+        "label": "started"
+      }
+    },
+    "ended": {
+      "type": "Date",
+      "config": {
+        "label": "ended"
+      }
+    },
+    "snapshot": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "snapshot"
+      }
+    }
+  }
+}

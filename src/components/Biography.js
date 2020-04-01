@@ -5,41 +5,45 @@ import Education from './Education';
 
 const Biography = () => {
   const data = useStaticQuery(graphql`
-    {
-      prismicBio {
-        data {
-          biography {
-            text
-          }
-          company {
-            text
-          }
-          jobs {
-            company1 {
-              text
-            }
-            description {
-              text
-            }
-            role {
-              text
-            }
-            duration {
-              text
-            }
-          }
-          eductation {
-            degree {
-              text
-            }
-            department {
-              text
-            }
-            institution {
-              text
-            }
-            year_finished {
-              text
+    query Header {
+      allPrismicBio {
+        edges {
+          node {
+            data {
+              biography {
+                text
+              }
+              company {
+                text
+              }
+              eductation {
+                degree {
+                  text
+                }
+                department {
+                  text
+                }
+                institution {
+                  text
+                }
+                year_finished {
+                  text
+                }
+              }
+              jobs {
+                company1 {
+                  text
+                }
+                description {
+                  text
+                }
+                duration {
+                  text
+                }
+              }
+              name {
+                text
+              }
             }
           }
         }
@@ -47,10 +51,14 @@ const Biography = () => {
     }
   `);
   const {
-    prismicBio: {
-      data: { biography, eductation, jobs },
-    },
+    allPrismicBio: { edges: bio },
   } = data;
+  const biography_data = bio[0];
+  const {
+    node: {
+      data: { biography, eductation: education, jobs },
+    },
+  } = biography_data;
   return (
     <section id="biography">
       <div className="container">
@@ -63,7 +71,7 @@ const Biography = () => {
         <div className="education-container">
           <h2>Education</h2>
           <hr />
-          {eductation.map(ed => (
+          {education.map(ed => (
             <Education
               degree={ed.degree.text}
               institution={ed.institution.text}
@@ -79,8 +87,8 @@ const Biography = () => {
             return (
               <Job
                 company={job.company1.text}
-                role={job.role.text}
-                description={job.description}
+                role={job.role}
+                description={job.description.text}
                 duration={job.duration.text}
               />
             );
