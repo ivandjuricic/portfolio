@@ -8,6 +8,7 @@ module.exports = {
     defaultImage: 'src/images/profile.png',
     description: 'Portfolio site',
     image: 'src/assets/images/profile.png',
+    author: '@darth_ivanche',
     twitterUsername: '@darth_ivanche',
   },
   plugins: [
@@ -20,8 +21,8 @@ module.exports = {
         name: 'Ivan Djuricic Portfolio',
         short_name: 'ivandjuricic',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#888',
+        theme_color: '#888',
         display: 'minimal-ui',
         icon: 'src/assets/images/laptop.png',
       },
