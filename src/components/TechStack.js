@@ -37,7 +37,6 @@ const TechStack = () => {
         <div className="technology-stack-container">
           {techData
             .filter(tech => {
-              debugger;
               return tech.primary === true;
             })
             .map(tech => {
