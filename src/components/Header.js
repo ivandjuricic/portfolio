@@ -11,7 +11,7 @@ const Header = () => {
             <h2 className="alt">
               Hi! I'm <strong>Ivan</strong>
             </h2>
-            <h2>Sofware Engineer</h2>
+            <h2>Software Engineer</h2>
           </div>
         </header>
       </div>
