@@ -5,16 +5,18 @@ import Tech from './Tech';
 const TechStack = () => {
   const data = useStaticQuery(graphql`
     {
-      allPrismicTechStack {
+      allPrismicTechstacks {
         edges {
           node {
             data {
-              compentecy {
-                text
-              }
-              primary
-              technology {
-                text
+              tech {
+                competency {
+                  text
+                }
+                name {
+                  text
+                }
+                primary
               }
             }
           }
@@ -23,8 +25,9 @@ const TechStack = () => {
     }
   `);
   const {
-    allPrismicTechStack: { edges },
+    allPrismicTechstacks: { edges },
   } = data;
+  const techData = edges[0].node.data.tech;
   return (
     <section id="tech-stack" className="two">
       <div className="container">
@@ -32,34 +35,35 @@ const TechStack = () => {
           <h2>Technology Stack</h2>
         </header>
         <div className="technology-stack-container">
-          {edges
-            .filter(e => {
-              return e.node.data.primary === 'true';
+          {techData
+            .filter(tech => {
+              debugger;
+              return tech.primary === true;
             })
-            .map(edge => {
+            .map(tech => {
               return (
                 <Tech
-                  key={edge.node.data.technology[0].text}
+                  key={tech.name[0].text}
                   primary={true}
-                  technology={edge.node.data.technology[0].text}
-                  competency={edge.node.data.compentecy[0].text}
+                  technology={tech.name[0].text}
+                  competency={tech.competency[0].text}
                 />
               );
             })}
         </div>
         <hr />
         <div className="technology-stack-container">
-          {edges
-            .filter(e => {
-              return e.node.data.primary !== 'true';
+          {techData
+            .filter(tech => {
+              return tech.primary !== true;
             })
-            .map(edge => {
+            .map(tech => {
               return (
                 <Tech
-                  key={edge.node.data.technology[0].text}
+                  key={tech.name[0].text}
                   primary={false}
-                  technology={edge.node.data.technology[0].text}
-                  competency={edge.node.data.compentecy[0].text}
+                  technology={tech.name[0].text}
+                  competency={tech.competency[0].text}
                 />
               );
             })}
