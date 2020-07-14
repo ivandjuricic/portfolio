@@ -68,7 +68,13 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    ></Helmet>
+    >
+      <script
+        src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+        async=""
+      ></script>
+      <script src="./notification.js" />
+    </Helmet>
   );
 }
 
